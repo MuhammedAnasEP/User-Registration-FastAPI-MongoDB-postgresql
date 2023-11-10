@@ -3,3 +3,4 @@ motor
 psycopg2-binary
 SQLAlchemy
 uvicorn
+python-multipart

@@ -5,12 +5,18 @@ from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+# from pymongo import MongoClient
 
 models.Base.metadata.create_all(bind=engine)
 
 MONGODB_URL = "mongodb://localhost:27017"
 mongo_client = AsyncIOMotorClient(MONGODB_URL)
 mongo_db = mongo_client["profile_pictures"]
+
+
+# client = MongoClient("mongodb://localhost:27017/")
+# database = client["profile_picture"]
+# users_collection = database["users"]
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
